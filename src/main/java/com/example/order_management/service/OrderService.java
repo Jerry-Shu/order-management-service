@@ -92,7 +92,7 @@ public class OrderService {
                 );
 
         String shippingUrl =
-                "http://localhost:8083/api/shipments";
+                "http://shipping-system-alb-1925811251.us-west-1.elb.amazonaws.com/api/shipments";
 
         restTemplate.postForObject(
                 shippingUrl,
