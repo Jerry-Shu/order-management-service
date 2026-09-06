@@ -105,4 +105,8 @@ public class OrderService {
                         + orderId
         );
     }
+
+    public void deleteOrder(Long id) {
+        orderRepository.deleteById(id);
+    }
 }

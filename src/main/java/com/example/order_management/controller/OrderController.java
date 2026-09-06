@@ -2,6 +2,7 @@ package com.example.order_management.controller;
 
 import com.example.order_management.entity.Order;
 import com.example.order_management.service.OrderService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,5 +37,14 @@ public class OrderController {
             @PathVariable Long id) {
 
         return orderService.getOrder(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteOrder(
+            @PathVariable Long id) {
+
+        orderService.deleteOrder(id);
+
+        return ResponseEntity.noContent().build();
     }
 }
